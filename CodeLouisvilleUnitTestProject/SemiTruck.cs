@@ -10,7 +10,7 @@
         public SemiTruck()
         {
             //YOUR CODE HERE: 
-            throw new NotImplementedException();
+            NumberOfTires = 18;
         }
 
         /// <summary>
@@ -20,7 +20,8 @@
         public void LoadCargo(CargoItem item)
         {
             //YOUR CODE HERE
-            throw new NotImplementedException();
+            List<CargoItem> cargo = new List<CargoItem>();
+            cargo.Add(item);
         }
             
         /// <summary>
@@ -32,7 +33,10 @@
         public CargoItem UnloadCargo(string name)
         {
             //YOUR CODE HERE
-            throw new NotImplementedException();
+            Cargo.Remove(name);
+            return CargoItem;
+            
+           
         }
 
         /// <summary>

@@ -5,7 +5,7 @@ using Xunit.Abstractions;
 
 namespace CodeLouisvilleUnitTestProjectTests
 {
-    public class VehicleTests
+    public class VehicleTestsShould
     {
 
         //Verify the parameterless constructor successfully creates a new
@@ -15,11 +15,11 @@ namespace CodeLouisvilleUnitTestProjectTests
         public void VehicleParameterlessConstructorTest()
         {
             //arrange
-            throw new NotImplementedException();
+            Vehicle vehicle = new (0, 0, "", "", 0);
             //act
 
             //assert
-
+            vehicle.Should().Be(vehicle);
         }
 
         //Verify the parameterized constructor successfully creates a new
@@ -29,11 +29,11 @@ namespace CodeLouisvilleUnitTestProjectTests
         public void VehicleConstructorTest()
         {
             //arrange
-            throw new NotImplementedException();
+            Vehicle vehicle = new(4,10,"Toyota","Camry",30);
             //act
 
             //assert
-
+            vehicle.Should().Be(vehicle);
         }
 
         //Verify that the parameterless AddGas method fills the gas tank
@@ -42,7 +42,8 @@ namespace CodeLouisvilleUnitTestProjectTests
         public void AddGasParameterlessFillsGasToMax()
         {
             //arrange
-            throw new NotImplementedException();
+
+            double _gasRemaining = 0;
             //act
 
             //assert
@@ -55,7 +56,7 @@ namespace CodeLouisvilleUnitTestProjectTests
         public void AddGasWithParameterAddsSuppliedAmountOfGas()
         {
             //arrange
-            throw new NotImplementedException();
+            
             //act
 
             //assert
@@ -79,15 +80,19 @@ namespace CodeLouisvilleUnitTestProjectTests
         //property returns the correct percentage when the gas level is
         //at 0%, 25%, 50%, 75%, and 100%.
         [Theory]
-        [InlineData("MysteryParamValue")]
-        public void GasLevelPercentageIsCorrectForAmountOfGas(params object[] yourParamsHere)
+        [InlineData("0%", 0)]
+        [InlineData("25%", 2.5)]
+        [InlineData("50%", 5)]
+        [InlineData("75%", 7.5)]
+        [InlineData("100%", 10)]
+        public void GasLevelPercentageIsCorrectForAmountOfGas(string percent, float gasToAdd)
         {
             //arrange
-            throw new NotImplementedException();
+            Vehicle vehicle = new(4, 10, "Benz", "GL450", 25);
             //act
-
+            vehicle.AddGas(gasToAdd);
             //assert
-
+            vehicle.GasLevel.Should().Be(percent);
         }
 
         /*

@@ -15,9 +15,9 @@ namespace CodeLouisvilleUnitTestProjectTests
         public void NewSemiTruckIsAVehicleAndHas18TiresAndEmptyCargoTest()
         {
             //arrange
-            throw new NotImplementedException();
+            SemiTruck semiTruck = new SemiTruck();
             //act
-
+            
             //assert
             
         }
